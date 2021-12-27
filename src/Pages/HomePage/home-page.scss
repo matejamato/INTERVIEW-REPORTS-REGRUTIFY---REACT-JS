@@ -1,0 +1,28 @@
+.cards-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-top: 100px;
+}
+.home-page {
+  margin: 20px;
+  padding: 30px 300px;
+  .search-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h2 {
+      color: rgb(107, 107, 107);
+      font-size: 100px;
+    }
+    input {
+      margin-right: 15px;
+      height: 80px;
+      width: 400px;
+      border-radius: 15px;
+      border: 1px solid grey;
+      padding: 5px 20px;
+      font-size: 40px;
+    }
+  }
+}

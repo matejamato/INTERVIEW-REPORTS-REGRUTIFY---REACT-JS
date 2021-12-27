@@ -1,0 +1,33 @@
+.candidate-info {
+  display: flex;
+  flex-direction: column;
+}
+.about {
+  display: flex;
+  margin: 50px 0px;
+  img {
+    width: 25%;
+    filter: grayscale(5);
+    margin-right: 150px;
+  }
+  h1 {
+    font-size: 60px;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+  }
+  p {
+    font-size: 40px;
+    margin: 50px 0px;
+  }
+}
+
+.back-to-homepage-button {
+  border: none;
+  border-radius: 12px;
+  height: 50px;
+  width: 200px;
+  font-size: large;
+  cursor: pointer;
+  letter-spacing: 5px;
+  margin-top: 40px;
+}

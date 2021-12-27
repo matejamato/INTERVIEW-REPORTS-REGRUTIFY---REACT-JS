@@ -1,0 +1,31 @@
+.report {
+  width: 70%;
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid black;
+    padding: 40px;
+    height: 130px;
+  }
+}
+.all-reports {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.search {
+  margin-right: 15px;
+  height: 80px;
+  width: 400px;
+  border-radius: 15px;
+  border: 1px solid grey;
+  padding: 5px 20px;
+  font-size: 40px;
+}

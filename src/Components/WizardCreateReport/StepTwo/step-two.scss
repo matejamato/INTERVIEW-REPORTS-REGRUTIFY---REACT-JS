@@ -1,0 +1,15 @@
+.allCompanies {
+    border: red 5px solid;
+    font-size: 25px;
+    margin-top: 30px;
+    width: 70%;
+    .singleCompany {
+        border: solid 2px green;
+        padding: 5px;
+        font-weight: 700px;
+        margin:5px 0px;
+    }
+    .active {
+        background-color: rgb(135, 152, 200);
+    }
+}

@@ -1,0 +1,33 @@
+header {
+  margin-bottom: 100px !important;
+}
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 100px;
+  margin-top: 80px;
+  button {
+    border: none;
+    height: 50px;
+    width: 200px;
+    font-size: large;
+    cursor: pointer;
+    letter-spacing: 5px;
+    margin-top: 40px;
+  }
+  button:hover {
+    background-color: aquamarine;
+  }
+}
+
+.navigation-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 30px 20px;
+  button {
+    height: 40px;
+    width: 100px;
+    font-size: 25px;
+  }
+}

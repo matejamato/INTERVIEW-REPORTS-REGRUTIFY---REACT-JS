@@ -1,0 +1,29 @@
+.info-page {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 100px;
+
+  h1 {
+    font-size: 60px;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+  }
+  table,
+  th,
+  td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+  table {
+    width: 100%;
+    font-size: 30px;
+  }
+  th {
+    width: 33%;
+    height: 100px;
+  }
+  td {
+    height: 100px;
+    text-align-last: center;
+  }
+}
