@@ -3,6 +3,7 @@ import './home-page.scss'
 import Header from '../../Components/Header/Header.jsx'
 import Card from '../../Components/Card/Card.jsx'
 import { mainCtx } from '../../App'
+import { Link } from 'react-router-dom'
 
 function HomePage(props) {
 
@@ -18,14 +19,19 @@ function HomePage(props) {
       <Header></Header>
       <div className="home-page">
         <div className="search-div">
-          <h2>Candidates</h2>
+          <div>
+            {localStorage.getItem('token') && (<div className='navigation-buttons'><Link to='/admin/reports'><p>Reports</p></Link>
+              <Link to='/admin/reports/new-report'><p>Create Report</p></Link></div>)}
+            <h2>Candidates</h2>
+          </div>
           <input type="text"
             placeholder="Search..."
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}>
           </input>
         </div>
-        <div className="cards-wrapper">{filteredCandidates.map((e) => <Card candidateInfo={e}></Card>)}</div>
+        <div className="cards-wrapper">
+          {filteredCandidates.map((e) => <Card candidateInfo={e}></Card>)}</div>
       </div>
     </>
   );

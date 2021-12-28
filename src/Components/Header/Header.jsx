@@ -8,7 +8,7 @@ function Header() {
 
   return (
     <div className="header">
-      <h1>Regrutify</h1>
+      <Link to='/'><h1>Regrutify</h1></Link>
       {
         localStorage.getItem('token') ?
           <Link to='/'><button onClick={() => {

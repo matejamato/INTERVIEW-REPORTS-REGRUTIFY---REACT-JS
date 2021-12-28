@@ -10,6 +10,7 @@ import { authCtx } from '../../App'
 
 function CreateReportPage() {
 
+    const history = useHistory()
     const { reportsList, setReportsList } = useContext(mainCtx)
     const { token } = useContext(authCtx)
     const [wizardStep, setWizardStep] = useState(1)
@@ -23,6 +24,9 @@ function CreateReportPage() {
         status: '',
         note: ''
     })
+    const redirect = () => {
+        history.push('/admin/reports')
+    }
 
     const sumbitReport = () => {
         fetch("http://localhost:3333/api/reports", {
@@ -36,7 +40,7 @@ function CreateReportPage() {
             .then(res => res.json())
             .then(res => {
                 setReportsList([...reportsList, res])
-                // SAD REDIRECTUJ
+                redirect()
             })
     }
 
@@ -53,16 +57,25 @@ function CreateReportPage() {
             <div className="navigation-buttons">
                 {(wizardStep === 2 || wizardStep === 3) &&
                     <button className='back'
-                        onClick={() =>
+                        onClick={() => {
+                            ((wizardStep === 2 && setReport({ ...report, companyName: '', companyId: '' })) ||
+                                (wizardStep === 3 && setReport({ ...report, interviewDate: '', phase: '', status: '', note: '' }))
+                            )
                             setWizardStep(wizardStep - 1)
-                        }>BACK</button>}
+                        }}>BACK</button>}
                 {(wizardStep === 1 || wizardStep === 2) &&
                     <button className='next'
-                        onClick={() =>
-                            setWizardStep(wizardStep + 1)
-                        }>NEXT</button>}
+                        onClick={() => {
+                            ((wizardStep === 1 && report.candidateName !== '') && setWizardStep(wizardStep + 1)) ||
+                                ((wizardStep === 2 && report.companyName !== '') && setWizardStep(wizardStep + 1))
+                        }}>
+                        NEXT
+                    </button>}
                 {wizardStep === 3 && <button className='submit'
-                    onClick={sumbitReport}>SUBMIT</button>}
+                    onClick={() => {
+                        (report.interviewDate !== '' && report.phase !== '' && report.status !== '' && report.note !== '') && sumbitReport()
+                    }
+                    }>SUBMIT</button>}
             </div>
         </div >
     );

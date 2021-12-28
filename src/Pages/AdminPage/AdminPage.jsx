@@ -36,14 +36,19 @@ function ReportsPage(props) {
   return (
     <div>
       <Header></Header>
-      <div className="buttons"><Link to='/admin/reports'><button>REPORTS</button></Link>
-        <Link to='/admin/reports/new-report'><button>CREATE NEW REPORTS</button></Link></div>
-      <input className="search"
-        type="text"
-        placeholder="Search..."
-        value={searchText}
-        onChange={(e) => setSearchText(e.target.value)}>
-      </input>
+      <div className='underHeader'>
+        <div className="buttons"><Link to='/admin/reports'><button>REPORTS</button></Link>
+          <Link to='/admin/reports/new-report'><button>CREATE NEW REPORTS</button></Link>
+        </div>
+        <div className='searchDiv'>
+          <input className="search"
+            type="text"
+            placeholder="Search..."
+            value={searchText}
+            onChange={(e) => setSearchText(e.target.value)}>
+          </input>
+        </div>
+      </div>
       <div className='all-reports'>
         {filteredReports.map((e) => {
           return <div className="report">
@@ -67,7 +72,7 @@ function ReportsPage(props) {
               <button onClick={() => {
                 setModalReportId(e.id)
                 setIsModalOpen(true)
-              }}>O</button>
+              }}>i</button>
               <button onClick={() => {
 
                 deleteReport(e.id)

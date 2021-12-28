@@ -12,24 +12,29 @@ function StepTwo(props) {
 
   return (
     <>
-      <div>
-        <p>Candidate:</p>
-        <h4>{props.report.candidateName}</h4>
+      <div className="searchDiv">
+        <input className="search" type="text"
+          placeholder="Search..."
+          value={searchText}
+          onChange={(e) => setSearchText(e.target.value)}>
+        </input>
       </div>
-      <input type="text"
-        placeholder="Search..."
-        value={searchText}
-        onChange={(e) => setSearchText(e.target.value)}>
-      </input>
-      <div className='allCompanies'>
-        {filteredCompanies.map(e =>
-          <div className={e.id === isSelected ? 'singleCompany active' : 'singleCompany'}
-            onClick={() => {
-              setIsSelected(e.id)
-              props.setReport({ ...props.report, companyId: e.id, companyName: e.name })
-            }}>
-            <p>{e.name}</p>
-          </div>)}
+      <div className="selectcompany">
+        <div className="selected-candidate">
+          <p>Candidate:</p>
+          <h4>{props.report.candidateName}</h4>
+        </div>
+
+        <div className='allCompanies'>
+          {filteredCompanies.map(e =>
+            <div className={e.id === isSelected ? 'singleCompany active' : 'singleCompany'}
+              onClick={() => {
+                setIsSelected(e.id)
+                props.setReport({ ...props.report, companyId: e.id, companyName: e.name })
+              }}>
+              <p>{e.name}</p>
+            </div>)}
+        </div>
       </div>
     </>
   );

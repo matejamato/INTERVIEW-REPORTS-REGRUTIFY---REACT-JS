@@ -29,7 +29,6 @@ function LoginPage() {
           setToken(localStorage.getItem('token'));
         }
         else {
-          console.log(res)
           setErrorMessage(res)
         }
       })
@@ -40,17 +39,17 @@ function LoginPage() {
       {localStorage.getItem('token') && <Redirect to='/admin/reports' />}
       <div className='login'>
         <label htmlFor="username" >Email: </label>
-        <input type="text" 
-        name="username" 
-        onChange={(e) => setUser(e.target.value)}>
+        <input type="text"
+          name="username"
+          onChange={(e) => setUser(e.target.value)}>
         </input>
         <label htmlFor="password">Password: </label>
-        <input type="password" 
-        name="password" 
-        onChange={(e) => {
-          setPass(e.target.value)
-          setErrorMessage('')
-        }} />
+        <input type="password"
+          name="password"
+          onChange={(e) => {
+            setPass(e.target.value)
+            setErrorMessage('')
+          }} />
         <p>{errorMessage && `*${errorMessage}`}</p>
         <button type="submit" onClick={() => logIn()}>LOG IN</button>
       </div>

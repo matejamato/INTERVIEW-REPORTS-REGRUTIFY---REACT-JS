@@ -7,16 +7,15 @@
   margin: 50px 0px;
   img {
     width: 25%;
-    filter: grayscale(5);
-    margin-right: 150px;
+    // filter: grayscale(5);
+    margin-right: 100px;
   }
   h1 {
-    font-size: 60px;
-    letter-spacing: 3px;
+    // font-size: 60px;
+    letter-spacing: 2px;
     margin-bottom: 30px;
   }
   p {
-    font-size: 40px;
     margin: 50px 0px;
   }
 }
@@ -30,4 +29,11 @@
   cursor: pointer;
   letter-spacing: 5px;
   margin-top: 40px;
+  background-color: rgb(79, 124, 126);
+  color: white;
 }
+.back-to-homepage-button:hover{
+filter: brightness(110%);
+}
+
+

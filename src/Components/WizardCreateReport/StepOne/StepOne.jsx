@@ -14,12 +14,16 @@ function StepOne(props) {
 
 
     return (
+<>
+        <div className="searchDiv">
+        <input className="search" type="text"
+            placeholder="Search..."
+            value={searchText}
+            onChange={(e) => setSearchText(e.target.value)}>
+        </input></div>
+
         <div className='candidates'>
-            <input type="text"
-                placeholder="Search..."
-                value={searchText}
-                onChange={(e) => setSearchText(e.target.value)}>
-            </input>
+         
             {filteredCandidates.map(e =>
                 <div className={e.id === isSelected ? 'candidate active' : 'candidate'}
                     onClick={() => {
@@ -27,12 +31,11 @@ function StepOne(props) {
                         props.setReport({ ...props.report, candidateId: e.id, candidateName: e.name })
                     }}>
                     <img src={e.avatar} alt="avatar" />
-                    <div>
                         <h3>{e.name}</h3>
                         <p>{e.email}</p>
-                    </div>
                 </div>)}
         </div>
+    </>
     );
 }
 

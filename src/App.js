@@ -22,7 +22,7 @@ function App() {
         fetch("http://localhost:3333/api/candidates")
             .then(res => res.json())
             .then(res => setCandidatesList(res.map((e, i) => {
-                return { ...e, avatar: `https://randomuser.me/api/portraits/med/women/${i + 20}.jpg` }
+                return e
             })))
 
         fetch("http://localhost:3333/api/reports")
@@ -36,7 +36,7 @@ function App() {
 
     return (
 
-        <mainCtx.Provider value={{ candidatesList, reportsList, companiesList }}>
+        <mainCtx.Provider value={{ candidatesList, reportsList, companiesList, setReportsList }}>
             <authCtx.Provider value={{ token, setToken }}>
                 {!token && <Switch>
                     <Redirect from='/admin' to='/' />

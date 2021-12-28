@@ -21,14 +21,15 @@ function StepThree(props) {
 
    return (
       <>
-        <div>
+      <div className="wrapper">
+        <div className="selectedcandidate-company">
       <p>Candidate:</p>
       <h4>{props.report.candidateName}</h4>
       <p>Company:</p>
       <h4>{props.report.companyName}</h4>
       </div>
-      <div>
-         <div>
+      <div className="set-informations">
+         <div className="label-input">
             <label htmlFor="date">Interview Date: </label>
             <input type="date" id="date" name="interview-date"
                value={props.report.interviewDate}
@@ -36,7 +37,7 @@ function StepThree(props) {
                min="2020-01-01" max={todayDate()} required>
             </input>
          </div>
-         <div>
+         <div className="label-input">
             <label htmlFor="phase">Phase: </label>
             <select id="phase" name="phase" value={props.report.phase}
                onChange={e => props.setReport({ ...props.report, phase: e.target.value })} required>
@@ -47,7 +48,7 @@ function StepThree(props) {
                <option value="final">FINAL</option>
             </select>
          </div>
-         <div>
+         <div className="label-input">
             <label htmlFor="status">Status: </label>
             <select id="status" name="status" value={props.report.status}
                onChange={e => props.setReport({ ...props.report, status: e.target.value })} required>
@@ -56,12 +57,13 @@ function StepThree(props) {
                <option value="declined">DECLINED</option>
             </select>
          </div>
-         <div>
+         <div className="label-input">
             <label htmlFor="notes">Notes: </label>
             <textarea name="message" rows="10" cols="100" placeholder=" Write a Note..." value={props.report.note}
                onChange={e => props.setReport({ ...props.report, note: e.target.value })} required >
             </textarea>
          </div>
+      </div>
       </div>
       </>
    );
