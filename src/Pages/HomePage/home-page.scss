@@ -10,12 +10,15 @@
     justify-content: space-between;
     align-items: center;
     h2 {
-      color: rgb(107, 107, 107);
+      letter-spacing: 2px;
+      color: white;
+      background-color: rgb(79, 124, 126);
       border: 5px solid rgb(114, 113, 113);
       border-radius: 5px;
       padding: 10px 10px;
       margin-top: 50px;
       margin-left: 100px;
+      text-align: center;
     }
     input {
       margin-top: 50px;
@@ -28,10 +31,16 @@
   }
 }
 .navigation-buttons {
-  display: flex;
-  padding-left: 100px;
+ 
+  
+  
   p {
     padding: 10px;
+    color: white;
+    border: 5px solid rgb(114, 113, 113);
+    margin-left: 5px;
+    background-color: rgb(64, 228, 64);
+    border-radius: 5px;
   }
   p:hover {
     color: rgb(158, 24, 75);

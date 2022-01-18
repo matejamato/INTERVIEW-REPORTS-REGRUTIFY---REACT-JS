@@ -47,7 +47,7 @@ function CreateReportPage() {
     return (
         <div>
             <Header></Header>
-            <div className='nav-buttons'>
+            <div className='nav2-buttons'>
                 <Link to='/admin/reports'><button>REPORTS</button></Link>
                 <Link to='/admin/reports/new-report'><button>CREATE NEW REPORTS</button></Link>
             </div>

@@ -25,7 +25,7 @@ function StepOne(props) {
         <div className='candidates'>
          
             {filteredCandidates.map(e =>
-                <div className={e.id === isSelected ? 'candidate active' : 'candidate'}
+                <div className={e.id === props.report.candidateId ? 'candidate active' : 'candidate'}
                     onClick={() => {
                         setIsSelected(e.id)
                         props.setReport({ ...props.report, candidateId: e.id, candidateName: e.name })

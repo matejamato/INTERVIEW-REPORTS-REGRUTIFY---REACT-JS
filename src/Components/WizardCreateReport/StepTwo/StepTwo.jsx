@@ -27,7 +27,7 @@ function StepTwo(props) {
 
         <div className='allCompanies'>
           {filteredCompanies.map(e =>
-            <div className={e.id === isSelected ? 'singleCompany active' : 'singleCompany'}
+            <div className={e.id === props.report.companyId ? 'singleCompany active' : 'singleCompany'}
               onClick={() => {
                 setIsSelected(e.id)
                 props.setReport({ ...props.report, companyId: e.id, companyName: e.name })

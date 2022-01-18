@@ -1,7 +1,11 @@
 header {
   margin-bottom: 100px !important;
 }
-.nav-buttons {
+.nav2-buttons {
+ display: flex;
+ justify-content: flex-end;
+ margin-top: 50px;
+ margin-right: 80px;
   button {
     align-items: center;
     background-color: rgb(79, 124, 126);
@@ -12,6 +16,7 @@ header {
     padding: 0 10px;
     letter-spacing: 2px;
     border: none;
+    margin-left: 15px;
   }
   button:hover {
     filter: brightness(120%);
